@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meldingsnettsted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #chat-container {
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        #messages {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        #message-form {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        #username-input, #recipient-input, #message-input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #send-button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #send-button:hover {
+            background-color: #218838;
+        }
+        #footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <form id="message-form">
+            <input type="text" id="username-input" placeholder="Skriv inn navnet ditt eller nummeret ditt" required>
+            <input type="text" id="recipient-input" placeholder="Skriv inn mottakerens navn" required>
+            <input type="text" id="message-input" placeholder="Skriv inn meldingen din her..." required>
+            <button type="submit" id="send-button">Send</button>
+        </form>
+    </div>
+
+    <div id="footer">
+        Laget av Ali Junior
+    </div>
+
+    <!-- Inkludere Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
+    
